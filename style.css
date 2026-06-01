@@ -1,41 +1,39 @@
-/* General Page Setup */
-body { 
-    margin: 0; 
-    min-height: 100vh; 
+/* 1. Basic Page Reset */
+body { margin: 0; padding: 0; font-family: sans-serif; color: white; overflow: hidden; }
+.game-container { 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    width: 100vw; height: 100dvh; background-size: cover; background-position: center; 
+}
+
+/* 2. The Game Canvas (Handles layout and background) */
+.game-container {
+    width: 100vw;
+    height: 100dvh; /* Dynamic height for better mobile support */
     
-    /* Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start; 
-    
-    /* Responsive Background Fix */
+    /* Background setup */
     background-image: url('background.png');
-    background-size: cover; /* Forces image to cover the full screen */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     
-    /* Using vh (viewport height) makes the padding shrink/grow with the screen */
-    padding-top: 15vh; 
-    font-size: 16px; /* Sets a base size that scales better */
-    
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: white;
+    /* Flexbox Alignment (The "Magic" part) */
+    display: flex;
+    flex-direction: column;    /* Stacks elements vertically */
+    justify-content: center;   /* Centers items vertically */
+    align-items: center;       /* Centers items horizontally */
+    gap: 20px;                 /* Consistent space between elements */
+    transition: background-image 0.5s ease-in-out;
 }
 
-/* Blackboard Area */
-#blackboard {
-    text-align: center;
-    margin-bottom: 5px;
-    width: 100%;
+/* 3. Text and Display Elements */
+#title { 
+    font-size: 2.5em; 
+    margin: 0; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-#title { font-size: 2.5rem; } /* 'rem' scales better than 'em' on mobile */
 
 #expression { 
-    font-size: 4rem; 
-    margin: 1rem 0;
+    font-size: 3em; 
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
@@ -44,62 +42,16 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, A
     font-size: 1.5em; 
     font-style: italic; 
     color: #ffd700; 
-    height: 1.5em;
+    min-height: 1.5em; /* Prevents layout jump if empty */
 }
 
 #result { 
     font-weight: bold; 
     font-size: 2em; 
-    height: 1em; 
+    min-height: 1em; 
 }
 
-/* Controls */
-#ready-btn { 
-    padding: 20px 40px; /* Larger hit area for fingers */
-    font-size: 1.5rem; 
-    margin: 20px;
-    cursor: pointer;
-    background-color: #00d4ff;
-    border: none;
-    border-radius: 10px;
-}
-
-#lang-select, #operation { 
-    padding: 10px; 
-    font-size: 1.2rem; /* Easier to tap with a finger */
-    margin: 5px;
-}
-
-/* Blackboard Area */
-#blackboard {
-    text-align: center;
-    margin-bottom: 5px;
-    width: 100%;
-}
-
-#title { font-size: 1.5em; margin: 0; }
-
-#expression { 
-    font-size: 2em; 
-    margin: 5px 0; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-#transcript-display { 
-    font-size: 1.5em; 
-    font-style: italic; 
-    color: #ffd700; 
-    height: 1.5em;
-}
-
-#result { 
-    font-weight: bold; 
-    font-size: 2em; 
-    height: 1em; 
-}
-
-/* Controls */
+/* 4. Interactive Elements */
 #ready-btn { 
     padding: 15px 30px; 
     font-size: 1.2em; 
@@ -107,57 +59,47 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, A
     background-color: #00d4ff;
     border: none;
     border-radius: 10px;
-    margin: 10px;
+    transition: transform 0.2s; /* Subtle animation */
+}
+
+#ready-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* 5. Settings Bar (Holds the two dropdowns side-by-side) */
+.settings-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 #lang-select, #operation { 
-    padding: 5px;
-    margin: 5px;
+    padding: 8px 15px;
     font-size: 1em;
-}
-
-/* Blackboard Area */
-#blackboard {
-    text-align: center;
-    margin-bottom: 5px;
-    width: 100%;
-}
-
-#title { font-size: 1.5em; margin: 0; }
-
-#expression { 
-    font-size: 2em; 
-    margin: 5px 0; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-#transcript-display { 
-    font-size: 1.5em; 
-    font-style: italic; 
-    color: #ffd700; 
-    height: 1.5em;
-}
-
-#result { 
-    font-weight: bold; 
-    font-size: 2em; 
-    height: 1em; 
-}
-
-/* Controls */
-#ready-btn { 
-    padding: 15px 30px; 
-    font-size: 1.2em; 
+    border-radius: 5px;
     cursor: pointer;
-    background-color: #00d4ff;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
 }
 
-#lang-select, #operation { 
-    padding: 5px;
-    margin: 5px;
-    font-size: 1em;
+/* 2. CELLPHONE (Portrait - smallest screens) */
+@media (max-width: 599px) {
+    .game-container { background-image: url('backgroundSMALL.png'); gap: 15px; }
+    #title { font-size: 1.8em; }
+    #expression { font-size: 2em; }
+    .settings-bar { flex-direction: column; } /* Stack selects vertically */
+}
+
+/* 3. IPAD/TABLET (Medium screens) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .game-container { background-image: url('backgroundMEDIUN.png'); gap: 20px; }
+    #title { font-size: 2.2em; }
+    #expression { font-size: 2.5em; }
+    .settings-bar { flex-direction: row; } /* Side by side */
+}
+
+/* 4. PC (Large screens) */
+@media (min-width: 1025px) {
+    .game-container { background-image: url('backgroundLARGE.png'); gap: 30px; }
+    #title { font-size: 3em; }
+    #expression { font-size: 3.5em; }
+    .settings-bar { flex-direction: row; } /* Side by side */
 }
