@@ -25,17 +25,17 @@ recognition.continuous = true;
 
 const translations = {
     'en-US': { 
-        title: "Math Test", ready: "Ready to Answer", correct: "CORRECT!", incorrect: "INCORRECT!", listening: "Listening...",
+        title: "Math Practice", ready: "Ready to Answer", correct: "CORRECT!", incorrect: "INCORRECT!", listening: "Listening...",
         ops: ["Addition", "Subtraction", "Multiplication", "Division", "Exponents", "Square Roots"],
         settingsTitle: "Personalize Expressions", saveButton: "Save & Apply", gearButton: "⚙️ Settings"
     },
     'pt-BR': { 
-        title: "Prova de Matemática", ready: "Pronto para Responder", correct: "CORRETO!", incorrect: "INCORRETO!", listening: "Ouvindo...",
+        title: "Pratique sua Matemática", ready: "Pronto para Responder", correct: "CORRETO!", incorrect: "INCORRETO!", listening: "Ouvindo...",
         ops: ["Adição", "Subtração", "Multiplicação", "Divisão", "Potenciação", "Raiz Quadrada"],
         settingsTitle: "Personalizar Expressões", saveButton: "Salvar & Aplicar", gearButton: "⚙️ Configurações"
     },
     'es-ES': { 
-        title: "Prova de Matemáticas", ready: "Listo para Responder", correct: "¡CORRECTO!", incorrect: "¡INCORRECTO!", listening: "Escuchando...",
+        title: "Práctica de Matemáticas", ready: "Listo para Responder", correct: "¡CORRECTO!", incorrect: "¡INCORRECTO!", listening: "Escuchando...",
         ops: ["Suma", "Resta", "Multiplicación", "División", "Exponentes", "Raíz Cuadrada"],
         settingsTitle: "Personalizar Expresiones", saveButton: "Guardar & Aplicar", gearButton: "⚙️ Configuración"
     }
