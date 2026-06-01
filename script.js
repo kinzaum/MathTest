@@ -25,16 +25,71 @@ function wordToNumber(word, lang) {
     const maps = {
         'en-US': { "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9 },
         'pt-BR': { "um": 1, "dois": 2, "três": 3, "quatro": 4, "cinco": 5, "seis": 6, "sete": 7, "oito": 8, "nove": 9 },
-        'es-ES': { "uno": 1, "dos": 2, "tres": 3, "cuatro": 4, "cinco": 5, "seis": 6, "siete": 7, "ocho": 8, "nueve": 9 }
+        'de-DE': { "eins": 1, "zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6, "sieben": 7, "acht": 8, "neun": 9 },
+        'es-ES': { "uno": 1, "dos": 2, "tres": 3, "cuatro": 4, "cinco": 5, "seis": 6, "siete": 7, "ocho": 8, "nueve": 9 },
+        'ja-JP': { "一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9,"いち": 1, "に": 2, "さん": 3, "よん": 4, "ご": 5, "ろく": 6, "なな": 7, "はち": 8, "きゅう": 9 
+        }
     };
     const cleanWord = word.toLowerCase().trim();
     return maps[lang] ? maps[lang][cleanWord] : null;
 }
 
 const translations = {
-    'en-US': { title: "Math Practice", ready: "Ready to Answer", listening: "Listening...", correct: "CORRECT!", incorrect: "INCORRECT!", ops: ["Addition", "Subtraction", "Multiplication", "Division", "Exponents", "Square Roots"], settingsTitle: "Personalize Expressions", saveButton: "Save & Apply", gearButton: "⚙️ Settings" },
-    'pt-BR': { title: "Teste sua Matemática", ready: "Pronto para Responder", listening: "Ouvindo...", correct: "CORRETO!", incorrect: "INCORRETO!", ops: ["Adição", "Subtração", "Multiplicação", "Divisão", "Potenciação", "Raiz Quadrada"], settingsTitle: "Personalizar Expressões", saveButton: "Salvar & Aplicar", gearButton: "⚙️ Configurações" },
-    'es-ES': { title: "pon a prueba tus matemáticas", ready: "Listo para Responder", listening: "Escuchando...", correct: "¡CORRECTO!", incorrect: "¡INCORRECTO!", ops: ["Suma", "Resta", "Multiplicación", "División", "Exponentes", "Raíz Cuadrada"], settingsTitle: "Personalizar Expresiones", saveButton: "Guardar & Aplicar", gearButton: "⚙️ Configuración" }
+    'en-US': {
+        title: "Math Practice",
+        ready: "Ready to Answer",
+        listening: "Listening...",
+        correct: "CORRECT!",
+        incorrect: "INCORRECT!",
+        ops: ["Addition", "Subtraction", "Multiplication", "Division", "Exponents", "Square Roots"],
+        settingsTitle: "Personalize Expressions",
+        saveButton: "Save & Apply",
+        gearButton: "⚙️ Settings"
+    },
+    'pt-BR': {
+        title: "Teste sua Matemática",
+        ready: "Pronto para Responder",
+        listening: "Ouvindo...",
+        correct: "CORRETO!",
+        incorrect: "INCORRETO!",
+        ops: ["Adição", "Subtração", "Multiplicação", "Divisão", "Potenciação", "Raiz Quadrada"],
+        settingsTitle: "Personalizar Expressões",
+        saveButton: "Salvar & Aplicar",
+        gearButton: "⚙️ Configurações"
+    },
+    'es-ES': {
+        title: "Pon a prueba tus matemáticas",
+        ready: "Listo para Responder",
+        listening: "Escuchando...",
+        correct: "¡CORRECTO!",
+        incorrect: "¡INCORRECTO!",
+        ops: ["Suma", "Resta", "Multiplicación", "División", "Exponentes", "Raíz Cuadrada"],
+        settingsTitle: "Personalizar Expresiones",
+        saveButton: "Guardar & Aplicar",
+        gearButton: "⚙️ Configuración"
+    },
+    'ja-JP': {
+    title: "数学の練習",
+    ready: "回答する準備",
+    listening: "聞いています...",
+    correct: "正解！",
+    incorrect: "不正解！",
+    ops: ["足し算", "引き算", "掛け算", "割り算", "指数", "平方根"],
+    settingsTitle: "式をカスタマイズ",
+    saveButton: "保存して適用",
+    gearButton: "⚙️ 設定"
+    },
+    'de-DE': {
+        title: "Mathe-Test",
+        ready: "Bereit zur Antwort",
+        listening: "Höre zu...",
+        correct: "RICHTIG!",
+        incorrect: "FALSCH!",
+        ops: ["Addition", "Subtraktion", "Multiplikation", "Division", "Potenzen", "Quadratwurzeln"],
+        settingsTitle: "Ausdrücke personalisieren",
+        saveButton: "Speichern & Anwenden",
+        gearButton: "⚙️ Einstellungen"
+    }
 };
 
 function updateLanguage() {
