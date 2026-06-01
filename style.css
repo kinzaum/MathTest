@@ -123,7 +123,7 @@ body { margin: 0; padding: 0; font-family: sans-serif; color: white; overflow: h
 /* 2. CELLPHONE (Portrait - smallest screens) */
 @media (max-width: 599px) {
     .game-container { background-image: url('backgroundSMALL.png'); gap: 15px; }
-    #title { font-size: 3em; }
+    #title { font-size: 2em; }
     #expression { font-size: 3em; }
     .settings-bar { flex-direction: column; } /* Stack selects vertically */
 }
@@ -131,7 +131,7 @@ body { margin: 0; padding: 0; font-family: sans-serif; color: white; overflow: h
 /* 3. IPAD/TABLET (Medium screens) */
 @media (min-width: 600px) and (max-width: 1024px) {
     .game-container { background-image: url('backgroundMEDIUN.png'); gap: 20px; }
-    #title { font-size: 5em; }
+    #title { font-size: 3em; }
     #expression { font-size: 5em; }
     .settings-bar { flex-direction: row; } /* Side by side */
 }
@@ -139,7 +139,7 @@ body { margin: 0; padding: 0; font-family: sans-serif; color: white; overflow: h
 /* 4. PC (Large screens) */
 @media (min-width: 1025px) {
     .game-container { background-image: url('backgroundLARGE.png'); gap: 30px; }
-    #title { font-size: 8em; }
+    #title { font-size: 5em; }
     #expression { font-size: 8em; }
     .settings-bar { flex-direction: row; } /* Side by side */
 }
