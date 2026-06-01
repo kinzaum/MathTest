@@ -10,7 +10,19 @@
 
     <div class="game-container">
         <h1 id="title">Math Test</h1>
-        
+
+<div id="settings-panel" class="hidden">
+    <h3>Personalize Expressions</h3> <textarea id="custom-expressions" placeholder="e.g. 5+5, 10-2, 3x4"></textarea>
+    
+    <div id="preset-container">
+        <p>Or load a table:</p>
+        <div id="presets-scroll">
+            </div>
+    </div>
+    
+    
+    <button id="save-settings">Save & Apply</button> </div>
+
         <div id="expression">Loading...</div>
         <div id="transcript-display"></div>
         <div id="result"></div>
@@ -18,6 +30,8 @@
         <button id="ready-btn">Ready to Answer</button>
         
         <div class="settings-bar">
+
+            <button id="settings-toggle">⚙️ Settings</button>
             <select id="operation">
                 <option value="addition">Addition</option>
                 <option value="subtraction">Subtraction</option>
