@@ -18,6 +18,7 @@ body {
     
     /* Using vh (viewport height) makes the padding shrink/grow with the screen */
     padding-top: 15vh; 
+    font-size: 16px; /* Sets a base size that scales better */
     
     font-family: 'Comic Sans MS', cursive, sans-serif;
     color: white;
@@ -30,11 +31,11 @@ body {
     width: 100%;
 }
 
-#title { font-size: 1.5em; margin: 0; }
+#title { font-size: 2.5rem; } /* 'rem' scales better than 'em' on mobile */
 
 #expression { 
-    font-size: 2em; 
-    margin: 5px 0; 
+    font-size: 4rem; 
+    margin: 1rem 0;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
@@ -54,19 +55,19 @@ body {
 
 /* Controls */
 #ready-btn { 
-    padding: 15px 30px; 
-    font-size: 1.2em; 
+    padding: 20px 40px; /* Larger hit area for fingers */
+    font-size: 1.5rem; 
+    margin: 20px;
     cursor: pointer;
     background-color: #00d4ff;
     border: none;
     border-radius: 10px;
-    margin: 10px;
 }
 
 #lang-select, #operation { 
-    padding: 5px;
+    padding: 10px; 
+    font-size: 1.2rem; /* Easier to tap with a finger */
     margin: 5px;
-    font-size: 1em;
 }
 
 /* Blackboard Area */
